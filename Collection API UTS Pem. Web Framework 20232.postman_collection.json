@@ -1,0 +1,418 @@
+{
+	"info": {
+		"_postman_id": "4cf840ee-b602-429f-88c6-5105d6b8df9a",
+		"name": "Collection API UTS Pem. Web Framework 20232",
+		"description": "Collection ini digunakan mahasiswa untuk testing API yang akan mahasiswa buat untuk pengerjaan soal UTS (**jangan di otak-atik field body nya**).\n\nKami sebagai dosen pengampu matakuliah akan menggunakan collection API ini untuk memudahkan proses penilaian, sehingga mahasiswa bisa mengetahui berapa nilai UTS yang didapat hanya dengan melakukan pemeriksaan kesesuaian antara API yang dibuat dengan request-response dari collection API ini. Untuk memudahkan penggunaaan collection API serta **SYARAT NILAI** ini ikuti aturan-aturan berikut:\n\n1. **WAJIB HOSTING**, berbayar atau tidak dipersilahkan asalkan pada saat penilaian API dapat berjalan dengan baik. Kegagalan request-response API karena permasalahan hosting diluar tanggung jawab dosen pengampu dan sudah dipastikan dapat nilai 0.\n2. **WAJIB DOMAIN**, boleh menggunakan sub-domain sehingga bisa membeli domain secara kolektif.\n3. Pada collection terdapat beberapa simbol seperti berikut, **yang mana simbol ini harus mahasiswa ganti sesuai dengan API yang mahasiswa buat**:\n    1. **{{baseUrl}}** : nama domain boleh menggunakan http atau https\n    2. **{{jwtToken}}** : token JWT untuk otentikasi dan otorisasi (segmentasi role admin dan user)\n    3. **{{id}}** : id untuk melakukan edit ataupun delete, id: 1, 2, 3, dst\n    4. \"isi kan bla bla bla\" : isi kan inputan sesuai dengan seharusnya (boleh dimodifikasi inputannya untuk cek validasi inputan)\n4. **WAJIB GUNAKAN VALIDASI INPUTAN**\n5. **WAJIB LARAVEL**\n    \n\n**Apa yang harus saya penuhi untuk dapat nilai UTS?**\n\n1. Pengumpulan dan presensi wajib di BOC (ketentuan fakultas tidak bisa kompromi)\n2. Tidak melanggar aturan-aturan diatas\n3. Pengumpulan UTS berupa **link source code project UTS di github/gitlab/bitbucket (public bukan hasil kompresi seperti zip/rar), dan alamat domain**\n4. Melebihi batas waktu pengumpulan dianggap tidak mengikuti UTS\n    \n\n> Merugilah dia yang mencontek dan/atau memberi contekan kepada orang lain. Karena sesungguhnya dia telah membodohi dirinya sendiri serta orang lain.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33385217"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "read",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE2MDc0NjQyLCJleHAiOjE3MTYwNzgyNDJ9.NPh_PdtnAEol0YY81sU9W9zO92ZcwmvvvbrryD2cqRE"
+							}
+						],
+						"url": {
+							"raw": "https://utspbfdzaky1061.sistemapotekmitragaluh.com/api/categories",
+							"protocol": "https",
+							"host": [
+								"utspbfdzaky1061",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						},
+						"description": "melihat semua kategori"
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE2MDc0NjQyLCJleHAiOjE3MTYwNzgyNDJ9.NPh_PdtnAEol0YY81sU9W9zO92ZcwmvvvbrryD2cqRE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Porsche\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://utspbfdzaky1061.sistemapotekmitragaluh.com/api/categories",
+							"protocol": "https",
+							"host": [
+								"utspbfdzaky1061",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						},
+						"description": "membuat kategori"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE2MDc0NjQyLCJleHAiOjE3MTYwNzgyNDJ9.NPh_PdtnAEol0YY81sU9W9zO92ZcwmvvvbrryD2cqRE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Corvette\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://utspbfdzaky1061.sistemapotekmitragaluh.com/api/categories/3",
+							"protocol": "https",
+							"host": [
+								"utspbfdzaky1061",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories",
+								"3"
+							]
+						},
+						"description": "menyunting kategori sesuai id yang dipilih"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE2MDc0NjQyLCJleHAiOjE3MTYwNzgyNDJ9.NPh_PdtnAEol0YY81sU9W9zO92ZcwmvvvbrryD2cqRE"
+							}
+						],
+						"url": {
+							"raw": "https://utspbfdzaky1061.sistemapotekmitragaluh.com/api/categories/2",
+							"protocol": "https",
+							"host": [
+								"utspbfdzaky1061",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories",
+								"2"
+							]
+						},
+						"description": "menghapus kategori sesuai dengan id yang dipilih"
+					},
+					"response": []
+				}
+			],
+			"description": "kelola kategori produk"
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "read",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE2MDc0NjQyLCJleHAiOjE3MTYwNzgyNDJ9.NPh_PdtnAEol0YY81sU9W9zO92ZcwmvvvbrryD2cqRE"
+							}
+						],
+						"url": {
+							"raw": "https://utspbfdzaky1061.sistemapotekmitragaluh.com/api/products",
+							"protocol": "https",
+							"host": [
+								"utspbfdzaky1061",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "melihat semua data produk"
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE2MDc0NjQyLCJleHAiOjE3MTYwNzgyNDJ9.NPh_PdtnAEol0YY81sU9W9zO92ZcwmvvvbrryD2cqRE"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "911 GT3 RS",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Generasi pertama Porsche, model 911, muncul pada tahun 1963. Konstruksi 911 cukup unik karena mesinnya terletak di belakang (bukan di tengah-belakang).",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "895000000",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "Porsche",
+									"type": "text"
+								},
+								{
+									"key": "expired_at",
+									"value": "2028-05-19",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "upload gambar produk",
+									"type": "file",
+									"src": "postman-cloud:///1ef1574b-4c89-4a90-af29-d84a2920a32a"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://utspbfdzaky1061.sistemapotekmitragaluh.com/api/products",
+							"protocol": "https",
+							"host": [
+								"utspbfdzaky1061",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "membuat data produk baru"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE2MDc0NjQyLCJleHAiOjE3MTYwNzgyNDJ9.NPh_PdtnAEol0YY81sU9W9zO92ZcwmvvvbrryD2cqRE"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "GT-86",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Toyota 86 adalah mobil sport Coupe berukuran kompak hasil kolaborasi antara Toyota dan Subaru.",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "984000000",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "Toyota",
+									"type": "text"
+								},
+								{
+									"key": "expired_at",
+									"value": "2029-05-19",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "upload gambar produk",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://utspbfdzaky1061.sistemapotekmitragaluh.com/api/products/1",
+							"protocol": "https",
+							"host": [
+								"utspbfdzaky1061",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						},
+						"description": "menyunting data produk sesuai dengan id yang dipilih"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE2MDc0NjQyLCJleHAiOjE3MTYwNzgyNDJ9.NPh_PdtnAEol0YY81sU9W9zO92ZcwmvvvbrryD2cqRE"
+							}
+						],
+						"url": {
+							"raw": "https://utspbfdzaky1061.sistemapotekmitragaluh.com/api/products/2",
+							"protocol": "https",
+							"host": [
+								"utspbfdzaky1061",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"2"
+							]
+						},
+						"description": "menghapus data produk dengan id yang dipilih"
+					},
+					"response": []
+				}
+			],
+			"description": "mengelola data produk"
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Dzaky\",\r\n    \"email\":\"Dzaky1061@mail.co.id\",\r\n    \"password\": \"bertahantapitakditahan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://utspbfdzaky1061.sistemapotekmitragaluh.com/api/register",
+					"protocol": "https",
+					"host": [
+						"utspbfdzaky1061",
+						"sistemapotekmitragaluh",
+						"com"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "registrasi akun"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"admin@mail.com\",\r\n    \"password\" : \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://utspbfdzaky1061.sistemapotekmitragaluh.com/api/login",
+					"protocol": "https",
+					"host": [
+						"utspbfdzaky1061",
+						"sistemapotekmitragaluh",
+						"com"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register with oauth google",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://utspbfdzaky1061.sistemapotekmitragaluh.com/api/oauth/register",
+					"protocol": "https",
+					"host": [
+						"utspbfdzaky1061",
+						"sistemapotekmitragaluh",
+						"com"
+					],
+					"path": [
+						"api",
+						"oauth",
+						"register"
+					]
+				},
+				"description": "registrasi akun baru menggunakan google oauth (install laravel socialite)"
+			},
+			"response": []
+		}
+	]
+}
